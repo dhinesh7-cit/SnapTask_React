@@ -1,19 +1,11 @@
-// src/pages/app.js
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Upload from './Upload';
-import Dashboard from './Dashboard';
+import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 
-export default function App() {
+export default function App({ Component, pageProps }) {
   return (
-    <Router>
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+      <Component {...pageProps} />
+    </>
   );
 }
